@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -176,6 +178,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\Models\AppsDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppsDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App\Models\AppsDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App\Models\AppsDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppsDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Models\SysSample.cs">
+      <DependentUpon>AppsDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -191,6 +211,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\Models\AppsDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AppsDB.Context.cs</LastGenOutput>
+      <DependentUpon>AppsDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="App\Models\AppsDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AppsDB.cs</LastGenOutput>
+      <DependentUpon>AppsDB.edmx</DependentUpon>
+    </Content>
     <Content Include="Content\Images\account.jpg" />
     <Content Include="Content\Images\arrow.gif" />
     <Content Include="Content\Images\Article\icon_arrow_blue.gif" />
@@ -460,6 +490,12 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\BLL\" />
+    <Folder Include="App\Common\" />
+    <Folder Include="App\Core\" />
+    <Folder Include="App\DAL\" />
+    <Folder Include="App\IBLL\" />
+    <Folder Include="App\IDAL\" />
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\easyui\demo\" />
   </ItemGroup>
@@ -484,6 +520,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="App\Models\AppsDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AppsDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\Models\AppsDB.edmx.diagram">
+      <DependentUpon>AppsDB.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
