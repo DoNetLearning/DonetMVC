@@ -26,5 +26,32 @@ namespace App.Admin.Controllers
             return View(list);
         }
 
+        /// <summary>
+        /// POST: /SysSample/GetList
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult GetList()
+        {
+            List<SysSampleModel> list = m_BLL.GetList("");
+            var json = new
+            {
+                total = list.Count,
+                rows = (from r in list
+                        select new SysSampleModel()
+                        {
+
+                            Id = r.Id,
+                            Name = r.Name,
+                            Age = r.Age,
+                            Bir = r.Bir,
+                            Photo = r.Photo,
+                            Note = r.Note,
+                            CreateTime = r.CreateTime,
+
+                        }).ToArray()
+            };
+            return Json(json, JsonRequestBehavior.AllowGet);
+        }
     }
 }
