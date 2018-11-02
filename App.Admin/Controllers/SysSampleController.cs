@@ -1,13 +1,9 @@
-﻿using System;
+﻿using App.Common;
+using App.IBLL;
+using App.Models.Sys;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using App.BLL;
-using App.IBLL;
-using App.Models;
-using App.Models.Sys;
-using App.Common;
 using Unity.Attributes;
 
 namespace App.Admin.Controllers
@@ -26,10 +22,9 @@ namespace App.Admin.Controllers
         /// </summary>
         /// <param name="pager"></param>
         /// <returns></returns>
-        public ActionResult Index(GridPager pager)
-        {
-            List<SysSampleModel> list = m_BLL.GetList(ref pager);
-            return View(list);
+        public ActionResult Index()
+        {       
+            return View();
         }
 
         /// <summary>
@@ -37,7 +32,7 @@ namespace App.Admin.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult GetList(GridPager pager)
+        public JsonResult GetList(GridPager pager, string queryStr)
         {
             List<SysSampleModel> list = m_BLL.GetList(ref pager);
             var json = new
@@ -59,5 +54,78 @@ namespace App.Admin.Controllers
             };
             return Json(json, JsonRequestBehavior.AllowGet);
         }
+
+        #region 创建
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult Create(SysSampleModel model)
+        {
+            if (m_BLL.Create(model))
+            {
+                return Json(1, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+        #endregion
+
+        #region 修改
+        public ActionResult Edit(string id)
+        {
+            SysSampleModel entity = m_BLL.GetById(id);
+            return View(entity);
+        }
+
+        [HttpPost]
+        public JsonResult Edit(SysSampleModel model)
+        {
+            if (m_BLL.Edit(model))
+            {
+                return Json(1, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+        }
+        #endregion
+
+        #region 详细
+        public ActionResult Details(string id)
+        {
+            SysSampleModel entity = m_BLL.GetById(id);
+            return View(entity);
+        }
+        #endregion
+
+        #region 删除
+        [HttpPost]
+        public JsonResult Delete(string id)
+        {
+            if (!string.IsNullOrWhiteSpace(id))
+            {
+                if (m_BLL.Delete(id))
+                {
+                    return Json(1, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+
+                    return Json(0, JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+        }
+        #endregion
     }
 }
