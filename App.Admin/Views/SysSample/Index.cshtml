@@ -5,6 +5,15 @@
     Layout = "~/Views/Shared/_Index_Layout.cshtml";
 }
 
+<div class="mvctool">
+    <input id="txtQuery" type="text" class="searchText">
+    <a id="btnQuery" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text icon-search" style="padding-left: 20px;">查询</span></span></a><div class="datagrid-btn-separator"></div>
+    <a id="btnCreate" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text icon-add" style="padding-left: 20px;">新增</span></span></a><div class="datagrid-btn-separator"></div>
+    <a id="btnEdit" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text icon-edit" style="padding-left: 20px;">编辑</span></span></a><div class="datagrid-btn-separator"></div>
+    <a id="btnDetails" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text icon-details" style="padding-left: 20px;">详细</span></span></a><div class="datagrid-btn-separator"></div>
+    <a id="btnDelete" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text icon-remove" style="padding-left: 20px;">删除</span></span></a><div class="datagrid-btn-separator"></div>
+</div>
+
 <table id="List"></table>
 <script type="text/javascript">
     $(function () {
