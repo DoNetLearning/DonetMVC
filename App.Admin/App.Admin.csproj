@@ -511,6 +511,7 @@
     <Content Include="Scripts\easyui\src\jquery.window.js" />
     <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery.easyui.min.js" />
+    <Content Include="Scripts\jquery.easyui.plus.js" />
     <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
