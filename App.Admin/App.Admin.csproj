@@ -582,6 +582,9 @@
   <ItemGroup>
     <Content Include="Views\Shared\_Index_LayoutEdit.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SysSample\Create.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
