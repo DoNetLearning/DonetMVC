@@ -7,22 +7,28 @@ using App.BLL;
 using App.IBLL;
 using App.Models;
 using App.Models.Sys;
+using App.Common;
 using Unity.Attributes;
 
 namespace App.Admin.Controllers
 {
     public class SysSampleController : Controller
     {
-        //
-        // GET: /SysSample/
+
         /// <summary>
         /// 业务层注入
         /// </summary>
         [Dependency]
         public ISysSampleBLL m_BLL { get; set; }
-        public ActionResult Index()
+
+        /// <summary>
+        /// GET: /SysSample/
+        /// </summary>
+        /// <param name="pager"></param>
+        /// <returns></returns>
+        public ActionResult Index(GridPager pager)
         {
-            List<SysSampleModel> list = m_BLL.GetList("");
+            List<SysSampleModel> list = m_BLL.GetList(ref pager);
             return View(list);
         }
 
@@ -31,12 +37,12 @@ namespace App.Admin.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult GetList()
+        public JsonResult GetList(GridPager pager)
         {
-            List<SysSampleModel> list = m_BLL.GetList("");
+            List<SysSampleModel> list = m_BLL.GetList(ref pager);
             var json = new
             {
-                total = list.Count,
+                total = pager.totalRows,
                 rows = (from r in list
                         select new SysSampleModel()
                         {

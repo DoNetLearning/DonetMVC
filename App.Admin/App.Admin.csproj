@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -211,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\BLL\SysSampleBLL.cs" />
+    <Compile Include="App\Common\GridPager.cs" />
     <Compile Include="App\Core\DependencyRegisterType.cs" />
     <Compile Include="App\Core\UnityDependencyResolver.cs" />
     <Compile Include="App\DAL\SysSampleRepository.cs" />
@@ -530,7 +533,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Common\" />
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\easyui\demo\" />
   </ItemGroup>
