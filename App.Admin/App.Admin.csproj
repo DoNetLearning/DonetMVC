@@ -234,6 +234,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppsDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="App\Models\SysModule.cs">
+      <DependentUpon>AppsDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="App\Models\SysSample.cs">
       <DependentUpon>AppsDB.tt</DependentUpon>
     </Compile>

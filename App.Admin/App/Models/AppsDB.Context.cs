@@ -26,5 +26,6 @@ namespace App.Models
         }
     
         public DbSet<SysSample> SysSample { get; set; }
+        public DbSet<SysModule> SysModule { get; set; }
     }
 }
