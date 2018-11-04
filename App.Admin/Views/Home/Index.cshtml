@@ -10,11 +10,13 @@
 <head>
     <title>Index</title>
     <meta name="viewport" content="width=device-width" />
-     <script src="@Url.Content("~/Scripts/jquery.min.js")" type="text/javascript"></script>
-     <script src="@Url.Content("~/Scripts/jquery.easyui.min.js")" type="text/javascript"></script>
-     @Styles.Render("~/Content/css")
-     @Styles.Render("~/Content/themes/blue/css")
-     @Scripts.Render("~/bundles/home")
+    <script src="@Url.Content("~/Scripts/jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.easyui.min.js")" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.tree.js"></script>
+    <link href="~/Content/tree/css/tree.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/blue/css")
+    @Scripts.Render("~/bundles/home")
 </head>
 <body class="easyui-layout">
     <div id="OverTimeLogin"  class="easyui-dialog" data-options="closed:true,modal:true">
