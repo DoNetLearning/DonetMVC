@@ -77,11 +77,11 @@
                 $.messager.confirm('提示', '确定删除', function (r) {
                     if (r) {
                         $.post("/SysSample/Delete?id=" + row.Id, function (data) {
-                            if (data.type == 1)
-                                $("#List").datagrid('load');
+                            if (data == 1) {
+                                $("#List").datagrid('reload');
+                            }
                             $.messageBox5s('提示', data.message);
                         }, "json");
-
                     }
                 });
             } else { $.messageBox5s('提示', '请选择要操作的记录'); }

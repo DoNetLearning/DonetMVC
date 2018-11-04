@@ -34,7 +34,7 @@ namespace App.Admin.Controllers
         [HttpPost]
         public JsonResult GetList(GridPager pager, string queryStr)
         {
-            List<SysSampleModel> list = m_BLL.GetList(ref pager);
+            List<SysSampleModel> list = m_BLL.GetList(ref pager,queryStr);
             var json = new
             {
                 total = pager.totalRows,

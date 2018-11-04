@@ -22,11 +22,22 @@ namespace App.BLL
         /// <param name="pager">JQgrid分页</param>
         /// <param name="queryStr">搜索条件</param>
         /// <returns>列表</returns>
-        public List<SysSampleModel> GetList(ref GridPager pager)
+        public List<SysSampleModel> GetList(ref GridPager pager, string queryStr)
         {
 
             IQueryable<SysSample> queryData = null;
             queryData = Rep.GetList(db);
+
+            //实现查询
+            if(queryStr!=null)
+            {
+                queryData = queryData.Where(c =>
+                                            c.Id.Contains(queryStr) ||
+                                            c.Name.Contains(queryStr)||
+                                            c.Photo.Contains(queryStr)||
+                                            c.Note.Contains(queryStr)                          
+                                            );
+            }
 
             //排序
             if (pager.order == "desc")

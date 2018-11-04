@@ -12,7 +12,7 @@ namespace App.IBLL
         /// <param name="pager">JQgrid分页</param>
         /// <param name="queryStr">搜索条件</param>
         /// <returns>列表</returns>
-        List<SysSampleModel> GetList(ref GridPager pager);
+        List<SysSampleModel> GetList(ref GridPager pager, string queryStr);
         /// <summary>
         /// 创建一个实体
         /// </summary>
