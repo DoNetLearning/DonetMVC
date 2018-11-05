@@ -255,6 +255,9 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SysSampleController.cs" />
+    <Compile Include="Core\ValidateCode.ashx.cs">
+      <DependentUpon>ValidateCode.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -668,6 +671,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\SysSample\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\ValidateCode.ashx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
