@@ -112,12 +112,27 @@
             columns: [[
                 { field: 'Id', title: 'ID', width: 80 },
                 { field: 'Name', title: '名称', width: 120 },
-                { field: 'Age', title: '年龄', width: 80},
-                { field: 'Bir', title: '生日', width: 80},
+                { field: 'Age', title: '年龄', width: 80 },
+                { field: 'Bir', title: '生日', width: 80 },
                 { field: 'Photo', title: '照片', width: 80 },
                 { field: 'Note', title: '说明', width: 60 },
                 { field: 'CreateTime', title: '创建时间', width: 60 }
             ]]
+        });
+    });
+</script>
+
+<!--自动DataGrid 从第一次加载与重置窗体大小时候发生的事件:分部视图-->
+<script type="text/javascript">
+    $(function () {
+        $(window).resize(function () {
+            $('#List').datagrid('resize', {
+                width: $(window).width() - 10,
+                height: $(window).height() - 35
+            }).datagrid('resize', {
+                width: $(window).width() - 10,
+                height: $(window).height() - 35
+            });
         });
     });
 </script>
