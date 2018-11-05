@@ -212,12 +212,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\BLL\HomeBLL.cs" />
     <Compile Include="App\BLL\SysSampleBLL.cs" />
     <Compile Include="App\Common\GridPager.cs" />
     <Compile Include="App\Core\DependencyRegisterType.cs" />
     <Compile Include="App\Core\UnityDependencyResolver.cs" />
+    <Compile Include="App\DAL\HomeRepository.cs" />
     <Compile Include="App\DAL\SysSampleRepository.cs" />
+    <Compile Include="App\IBLL\IHomeBLL.cs" />
     <Compile Include="App\IBLL\ISysSampleBLL.cs" />
+    <Compile Include="App\IDAL\IHomeRepository.cs" />
     <Compile Include="App\IDAL\ISysSampleRepository.cs" />
     <Compile Include="App\Models\AppsDB.Context.cs">
       <AutoGen>True</AutoGen>
