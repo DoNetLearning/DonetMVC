@@ -8,7 +8,7 @@ using Unity.Attributes;
 
 namespace App.Admin.Controllers
 {
-    public class SysSampleController : Controller
+    public class SysSampleController : BaseController
     {
 
         /// <summary>

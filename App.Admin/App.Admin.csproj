@@ -215,6 +215,7 @@
     <Compile Include="App\BLL\HomeBLL.cs" />
     <Compile Include="App\BLL\SysSampleBLL.cs" />
     <Compile Include="App\Common\GridPager.cs" />
+    <Compile Include="App\Common\ToJsonResult.cs" />
     <Compile Include="App\Core\DependencyRegisterType.cs" />
     <Compile Include="App\Core\UnityDependencyResolver.cs" />
     <Compile Include="App\DAL\HomeRepository.cs" />
@@ -251,6 +252,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SysSampleController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
